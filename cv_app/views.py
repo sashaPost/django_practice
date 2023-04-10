@@ -4,5 +4,5 @@ import os
 
 # Create your views here.
 def show_pdf(request):
-    filepath = os.path.join('media', 'postylha.o_cv.pdf')
+    filepath = os.path.join('media', 'postylha.o-cv.pdf')
     return FileResponse(open(filepath, 'rb'), content_type='application/pdf')
