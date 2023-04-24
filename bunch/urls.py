@@ -16,9 +16,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import include, path
 
+from bunch import views
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('cv/', include('cv_app.urls')),
+    path('maintenance/', views.maintenance_mode, name='maintenance'),
 ]
 
 
