@@ -12,6 +12,10 @@ class MaintenanceModeMiddleware:
             response = redirect(reverse('maintenance'))
             return response
         
+        if not settings.MAINTENANCE_MODE and path != reverse('cv'):
+            response = redirect(reverse('cv'))
+            return response
+        
         response = self.get_response(request)
         
         return response
